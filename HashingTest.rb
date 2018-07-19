@@ -8,4 +8,4 @@ CSV.foreach("TestingHash.csv") do |line|
 
 end
 
-OpenHash
+puts OpenHash
