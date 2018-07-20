@@ -1,14 +1,14 @@
-#require 'csv'
+require 'csv'
 
-#OpenHash = {}
+OpenHash = {}
 
-#CSV.foreach("TestingHash.csv") do |line| 
+CSV.foreach("TestingHash.csv") do |line| 
 
-#  OpenHash[line[0].to_i] = [line[1].strip, line[2].to_f]
+  OpenHash[line[0].to_i] = [line[1].strip, line[2].to_f]
 
-#end
+end
 
-#puts OpenHash
+OpenHash[0]
 
 #require 'csv'
 #csv_data = CSV.read 'TestingHash.csv'
@@ -18,12 +18,12 @@
 
 #puts string_data[2]
 
-require 'csv'
+#require 'csv'
 
-hasher = {}
+#hasher = {}
 
-CSV.foreach("TestingHash.csv", :headers => true, :header_converters => :symbol, :converters => :all) do |row|
-  hasher[row.fields[0]] = Hash[row.headers[1..-1].zip(row.fields[1..-1])]
-end
+#CSV.foreach("TestingHash.csv", :headers => true, :header_converters => :symbol, :converters => :all) do |row|
+ # hasher[row.fields[0]] = Hash[row.headers[1..-1].zip(row.fields[1..-1])]
+#end
 
-puts hasher[1]
+#puts hasher[1]
