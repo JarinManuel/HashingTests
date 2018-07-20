@@ -20,10 +20,10 @@
 
 require 'csv'
 
-tickers = {}
+hasher = {}
 
 CSV.foreach("TestingHash.csv", :headers => true, :header_converters => :symbol, :converters => :all) do |row|
-  tickers[row.fields[0]] = Hash[row.headers[1..-1].zip(row.fields[1..-1])]
+  hasher[row.fields[0]] = Hash[row.headers[1..-1].zip(row.fields[1..-1])]
 end
 
-puts Food[1]
+puts hasher["14"][:Brand]
