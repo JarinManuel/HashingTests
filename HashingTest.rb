@@ -9,9 +9,6 @@ CSV.foreach(Hashing) do |line|
   OpenHash[line[0].to_i] = [line[1].strip, line[2].to_f]
 
 end
-
-OpenHash[0]
-
 #require 'csv'
 #csv_data = CSV.read 'TestingHash.csv'
 #headers = csv_data.shift.map {|i| i.to_s }
