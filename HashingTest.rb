@@ -1,14 +1,16 @@
-#require 'csv'
+require 'csv'
 
-#OpenHash = {}
+OpenHash = {}
 
-#CSV.foreach("TestingHash.csv") do |line| 
+Hashing = CSV.open("TestingHash.csv", "r", :headers => :first_row)
 
-#  OpenHash[line[0].to_i] = [line[1].strip, line[2].to_f]
+CSV.foreach(Hashing) do |line| 
 
-#end
+  OpenHash[line[0].to_i] = [line[1].strip, line[2].to_f]
 
-#OpenHash[0]
+end
+
+OpenHash[0]
 
 #require 'csv'
 #csv_data = CSV.read 'TestingHash.csv'
@@ -28,13 +30,3 @@
 
 #puts hasher[1]
 
-columns_to_keep = %w(Food Brand)
-
-# get the data
-mycsv = CSV.parse("TestingHash.csv", :headers => true)
-
-# change to column mode, filter by column name and change back to default
-# mode of operation
-mycsv.by_col!.delete_if do |col_name, col_values|
-  !columns_to_keep.include?(col_name)
-end.by_col_or_row! 
