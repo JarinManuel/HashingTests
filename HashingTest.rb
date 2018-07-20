@@ -6,7 +6,7 @@ Hashing = CSV.open("TestingHash.csv", "r", :headers => :first_row)
 
 CSV.foreach(Hashing) do |line| 
 
-  OpenHash[line[0].to_i] = [line[1].strip, line[2].to_f]
+  puts line
 
 end
 #require 'csv'
