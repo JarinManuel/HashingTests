@@ -26,4 +26,4 @@ CSV.foreach("TestingHash.csv", :headers => true, :header_converters => :symbol, 
   hasher[row.fields[0]] = Hash[row.headers[1..-1].zip(row.fields[1..-1])]
 end
 
-puts hasher[0]
+puts hasher[1]
