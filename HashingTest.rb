@@ -31,17 +31,36 @@
 
 require 'csv'
 
-csv_data = CSV.read('TestingHash.csv', headers: true)
+#csv_data = CSV.read 'TestingHash.csv'
 
-headers_again = csv_data.shift.map { |i| i.to_s }
+#headers = csv_data.shift.map { |i| i.to_s }
+
+#string_data = csv_data.map { |row| row.map { |cell| cell.to_s } }
+
+#array_of_hashes = string_data.map { |row| Hash[*headers.zip(row).flatten] }
+
+def errorFunction (logfile)
+
+csv_data = CSV.read 'TestingHash.csv'
+
+headers = csv_data.shift.map { |i| i.to_s }
 
 string_data = csv_data.map { |row| row.map { |cell| cell.to_s } }
 
 array_of_hashes = string_data.map { |row| Hash[*headers.zip(row).flatten] }
 
-table = CSV.open('TestingHash.csv', headers: true)
-table.headers
-table.read
-table.headers
+    logfile.each do |row|
 
-puts headers_again[1]
+        if(headers == "Food")
+
+            puts "all good"
+
+        end
+
+    end
+
+puts headers[1]
+
+end
+
+
