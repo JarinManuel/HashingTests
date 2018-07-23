@@ -1,14 +1,15 @@
-require 'csv'
+#require 'csv'
 
-OpenHash = {}
+#hash_testing = CSV.open("TestingHash.csv", "wb", :headers => :first_row)
 
-Hashing = CSV.open("TestingHash.csv", "r", :headers => :first_row)
+#CSV.foreach(hash_testing) do |line| 
 
-CSV.foreach(Hashing) do |line| 
+#  puts line
 
-  puts line
+#end
 
-end
+##############################################################
+
 #require 'csv'
 #csv_data = CSV.read 'TestingHash.csv'
 #headers = csv_data.shift.map {|i| i.to_s }
@@ -27,3 +28,11 @@ end
 
 #puts hasher[1]
 
+
+require 'csv'
+csv_data = CSV.read 'TestingHash.csv'
+headers = csv_data.shift.map {|i| i.to_s }
+string_data = csv_data.map {|row| row.map {|cell| cell.to_s } }
+array_of_hashes = string_data.map {|row| Hash[*headers.zip(row).flatten] }
+
+puts headers
