@@ -49,16 +49,8 @@ CSV.foreach(my_file, headers: true) do |row|
 
   data_folder << row
 
+  row << data_folder.keys
+
 end
 
 print data_folder
-
-if (data_folder.has_key( "Food" ) == true)
-
-print "good"
-
-else
-
-print "bad"
-
-end
