@@ -54,4 +54,4 @@ CSV.foreach(my_file, headers: true) do |row|
 
 end
 
-print data_folder
+print empty_array
