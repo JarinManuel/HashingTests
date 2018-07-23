@@ -41,18 +41,16 @@ require 'csv'
 
 #puts headers[1]
 
-hash = {}
+file_data = {}
 
-File.open("TestingHash.csv") do |fp|
+File.open('TestingHash.csv', 'r') do |file|
 
-  fp.each do |line|
+  file.each_line do |line|
 
-    key, value = line.chomp.split("\t")
+    line_data = line.split(',')
 
-    hash[key] = value
+    file_data[line_data[0]] = line_data[1]
 
   end
 
 end
-
-puts hash['Food']
