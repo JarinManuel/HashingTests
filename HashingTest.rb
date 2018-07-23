@@ -37,4 +37,4 @@ array_of_hashes = string_data.map {|row| Hash[*headers.zip(row).flatten] }
 
 puts headers[1]
 
-puts string_data
+puts string_data[1]
