@@ -41,17 +41,16 @@ require 'csv'
 
 #puts headers[1]
 
-my_file = "TestingHash.csv"
+hash = {}
 
-data_folder = []
-empty_array = []
+File.open("TestingHash.csv") do |fp|
 
-CSV.foreach(my_file, headers: true) do |row|
+  fp.each do |line|
 
-  data_folder << row
+    key, value = line.chomp.split("\t")
 
-  empty_array.push(data_folder)
+    hash[key] = value
+
+  end
 
 end
-
-print empty_array
