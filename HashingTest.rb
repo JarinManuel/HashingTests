@@ -52,3 +52,13 @@ CSV.foreach(my_file, headers: true) do |row|
 end
 
 print data_folder
+
+if (data_folder.has_key( "Food" ) == true)
+
+print "good"
+
+else
+
+print "bad"
+
+end
