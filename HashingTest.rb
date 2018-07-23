@@ -41,18 +41,12 @@ require 'csv'
 
 #puts headers[1]
 
-file_data = {}
+products = {}
 
-File.open('TestingHash.csv', 'r', headers: true) do |file|
+CSV.foreach("TestingHash.csv") do |line| 
 
-  file.each_line do |line|
-
-    line_data = line.split(',')
-
-    file_data.keys = line_data[0]
-
-  end
+  products[line[0].to_i] = [line[1].strip, line[2].to_f]
 
 end
 
-print file_data
+products
