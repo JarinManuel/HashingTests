@@ -55,6 +55,4 @@ end
 
 puts headers[1]
 
-end
-
 errorFunction
