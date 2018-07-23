@@ -43,24 +43,16 @@ require 'csv'
 
 file_data = {}
 
-File.open('TestingHash.csv', 'r', headers: true) do |file|
+File.open('TestingHash.csv', 'r') do |file|
 
   file.each_line do |line|
 
     line_data = line.split(',')
 
-    headers = line_data[0]
-
-    x = 1
-
-    device = line_data[x]
-
-    x++
+    file_data[line_data[0]] = line_data[1]
 
   end
 
 end
 
 print file_data
-
-puts file_data['Food']
