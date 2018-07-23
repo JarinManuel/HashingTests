@@ -49,7 +49,7 @@ File.open('TestingHash.csv', 'r') do |file|
 
     line_data = line.split(',')
 
-    file_data[line_data[0]] = line_data[1]
+    file_data = line_data[0]
 
   end
 
