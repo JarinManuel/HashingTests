@@ -31,17 +31,9 @@
 
 require 'csv'
 
-#csv_data = CSV.read 'TestingHash.csv'
-
-#headers = csv_data.shift.map { |i| i.to_s }
-
-#string_data = csv_data.map { |row| row.map { |cell| cell.to_s } }
-
-#array_of_hashes = string_data.map { |row| Hash[*headers.zip(row).flatten] }
+csv_data = CSV.read 'TestingHash.csv'
 
 def errorFunction (logfile)
-
-csv_data = CSV.read 'TestingHash.csv'
 
 headers = csv_data.shift.map { |i| i.to_s }
 
@@ -49,15 +41,17 @@ string_data = csv_data.map { |row| row.map { |cell| cell.to_s } }
 
 array_of_hashes = string_data.map { |row| Hash[*headers.zip(row).flatten] }
 
-    logfile.each do |row|
-
         if(headers == "Food")
 
             puts "all good"
 
+        else
+
+            puts "not here"
+
         end
 
-    end
+end
 
 puts headers[1]
 
