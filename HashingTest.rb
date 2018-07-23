@@ -43,13 +43,13 @@ require 'csv'
 
 file_data = {}
 
-File.open('TestingHash.csv', 'r') do |file|
+File.open('TestingHash.csv', 'r', headers: true) do |file|
 
   file.each_line do |line|
 
     line_data = line.split(',')
 
-    file_data = line_data[0]
+    file_data.keys = line_data[0]
 
   end
 
