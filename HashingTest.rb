@@ -31,29 +31,17 @@
 
 require 'csv'
 
-def ReadHashTestFile(longfile)
+csv_data = CSV.read('TestingHash.csv', headers: true)
 
-    CSV.foreach(longFile, :headers => true, :return_headers => true) do |row|
-
-      if row.header_row? then 
-
-        raise ArgumentError, "Bad headers" unless header_sane?(row) 
-
-      end
-      # Otherwise do the processing
-
-    end
-
-end
-
-csv_data = CSV.read 'TestingHash.csv'
-
-headers = csv_data.shift.map { |i| i.to_s }
+headers_again = csv_data.shift.map { |i| i.to_s }
 
 string_data = csv_data.map { |row| row.map { |cell| cell.to_s } }
 
 array_of_hashes = string_data.map { |row| Hash[*headers.zip(row).flatten] }
 
-ReadHashTestFile
+table = CSV.open('TestingHash.csv', headers: true)
+table.headers
+table.read
+table.headers
 
-puts headers[1]
+puts headers_again[1]
