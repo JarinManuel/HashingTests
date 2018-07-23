@@ -49,4 +49,4 @@ CSV.foreach("TestingHash.csv") do |line|
 
 end
 
-products
+print products
