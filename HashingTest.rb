@@ -30,18 +30,30 @@
 
 
 require 'csv'
-csv_data = CSV.read 'TestingHash.csv'
-headers = csv_data.shift.map {|i| i.to_s }
-string_data = csv_data.map {|row| row.map {|cell| cell.to_s } }
-array_of_hashes = string_data.map {|row| Hash[*headers.zip(row).flatten] }
-
-puts headers[1]
 
 def ReadHashTestFile(longfile)
-  CSV.foreach(longFile, :headers => true, :return_headers => true, :col_sep => '|') do |row|
-    if row.header_row? then 
-      raise ArgumentError, "Bad headers" unless header_sane?(row) 
+
+    CSV.foreach(longFile, :headers => true, :return_headers => true) do |row|
+
+      if row.header_row? then 
+
+        raise ArgumentError, "Bad headers" unless header_sane?(row) 
+
+      end
+      # Otherwise do the processing
+
     end
-    # Otherwise do the processing
-  end
+
 end
+
+csv_data = CSV.read 'TestingHash.csv'
+
+headers = csv_data.shift.map { |i| i.to_s }
+
+string_data = csv_data.map { |row| row.map { |cell| cell.to_s } }
+
+array_of_hashes = string_data.map { |row| Hash[*headers.zip(row).flatten] }
+
+ReadHashTestFile
+
+puts headers[1]
