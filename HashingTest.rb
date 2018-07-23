@@ -44,12 +44,13 @@ require 'csv'
 my_file = "TestingHash.csv"
 
 data_folder = []
+empty_array = []
 
 CSV.foreach(my_file, headers: true) do |row|
 
   data_folder << row
 
-  row << data_folder.keys
+  empty_array.push(data_folder)
 
 end
 
