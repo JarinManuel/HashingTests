@@ -54,3 +54,5 @@ File.open("TestingHash.csv") do |fp|
   end
 
 end
+
+puts hash['Food']
