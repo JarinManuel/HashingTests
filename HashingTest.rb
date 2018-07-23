@@ -37,6 +37,11 @@ array_of_hashes = string_data.map {|row| Hash[*headers.zip(row).flatten] }
 
 puts headers[1]
 
-FindingName = request.headers["Food"]
-
-FindingName
+def ReadHashTestFile(longfile)
+  CSV.foreach(longFile, :headers => true, :return_headers => true, :col_sep => '|') do |row|
+    if row.header_row? then 
+      raise ArgumentError, "Bad headers" unless header_sane?(row) 
+    end
+    # Otherwise do the processing
+  end
+end
