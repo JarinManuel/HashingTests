@@ -56,3 +56,5 @@ File.open('TestingHash.csv', 'r') do |file|
 end
 
 print file_data
+
+puts file_data['Food']
