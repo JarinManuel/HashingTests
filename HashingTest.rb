@@ -54,3 +54,5 @@ File.open('TestingHash.csv', 'r') do |file|
   end
 
 end
+
+print file_data
